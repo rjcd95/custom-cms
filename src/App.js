@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/organisms/header';
+import Hero from './components/molecules/hero';
 import initialData from "./assets/data/initialData";
 import './assets/scss/index.scss';
 
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <Hero />
     </div>
   );
 };
