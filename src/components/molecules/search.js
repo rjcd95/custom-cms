@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import SearchLabel from '../atoms/searchLabel';
-import SearchInput from '../atoms/searchInput';
-import SearchButton from '../atoms/searchButton';
-import SearchMatches from '../atoms/searchMatches';
+import { SearchLabel, SearchInput, SearchButton, SearchMatches } from '../atoms/search';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
