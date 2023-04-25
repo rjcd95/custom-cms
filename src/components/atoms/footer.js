@@ -6,7 +6,7 @@ const Footer = () => {
     const isFixedFooter = location.pathname !== '/';
     return (
         <footer className={`footer ${isFixedFooter ? 'fixed' : ''}`}>
-            <div className="container">
+            <div className="footer__container">
                 <p>&copy; 2023 My Personal Blog. All Rights Reserved.</p>
             </div>
         </footer>
