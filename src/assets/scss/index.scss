@@ -1,12 +1,17 @@
+@import './grid';
+
 // ATOMS
 @import './atoms/logo';
 @import './atoms/menu-link';
+@import './atoms/video';
 @import './atoms/footer';
 
 // MOLECULES
 @import './molecules/menu';
 @import './molecules/search';
 @import './molecules/hero-image';
+@import './molecules/thumbnail-with-text';
+@import './molecules/gallery-images';
 
 // ORGANISMS
 @import './organisms/header';
