@@ -5,6 +5,7 @@ import Header from './components/organisms/header';
 import Home from 'components/pages/home';
 import Footer from 'components/atoms/footer';
 import About from 'components/pages/about';
+import Blog from 'components/pages/blog';
 import Contact from 'components/pages/contact';
 import './assets/scss/index.scss';
 
@@ -30,6 +31,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           <Footer />
