@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Header from './components/organisms/header';
+import initialData from "./assets/data/initialData";
+import './assets/scss/index.scss';
 
-function App() {
+const App = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("posts"));
+
+    if (!data) {
+      localStorage.setItem("posts", JSON.stringify(initialData));
+      setPosts(initialData);
+    } else {
+      setPosts(data);
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
     </div>
   );
-}
+};
 
 export default App;

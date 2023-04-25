@@ -1,0 +1,12 @@
+.menu-link {
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+  
+    &:hover {
+      color: #666;
+    }
+}
