@@ -1,11 +1,16 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-const Footer = () => (
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 My Personal Blog. All Rights Reserved.</p>
-        </div>
-    </footer>
-);
+const Footer = () => {
+    const location = useLocation();
+    const isFixedFooter = location.pathname !== '/';
+    return (
+        <footer className={`footer ${isFixedFooter ? 'fixed' : ''}`}>
+            <div className="container">
+                <p>&copy; 2023 My Personal Blog. All Rights Reserved.</p>
+            </div>
+        </footer>
+    )
+};
 
 export default Footer;
