@@ -4,6 +4,7 @@ import initialData from "./assets/data/initialData";
 import Header from './components/organisms/header';
 import Home from 'components/pages/home';
 import './assets/scss/index.scss';
+import Footer from 'components/atoms/footer';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -27,6 +28,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </div>
