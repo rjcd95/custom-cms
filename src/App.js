@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import initialData from "./assets/data/initialData";
 import Header from './components/organisms/header';
 import Home from 'components/pages/home';
-import './assets/scss/index.scss';
 import Footer from 'components/atoms/footer';
 import About from 'components/pages/about';
+import Contact from 'components/pages/contact';
+import './assets/scss/index.scss';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -29,6 +30,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           <Footer />
         </div>
