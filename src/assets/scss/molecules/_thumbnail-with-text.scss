@@ -1,0 +1,18 @@
+.thumbnailWithText {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  img {
+    flex: 0 0 120px;
+    height: 120px;
+    margin-right: 20px;
+  }
+  &__content {
+    flex: 1;
+    &--description {
+      margin: 0;
+      font-size: 16px;
+      color: #666;
+    }
+  }
+}
