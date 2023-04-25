@@ -17,9 +17,9 @@ const Blog = () => {
                 <h1>Blog Page</h1>
                 <ul>
                     {posts.map((post, index) => (
-                    <li key={index}>
-                        <h2>{post.title}</h2>
-                        <p>{post.content}</p>
+                    <li key={index} className="post">
+                        <h2 className="post__title">{post.title}</h2>
+                        <p className="post__body">{post.body}</p>
                     </li>
                     ))}
                 </ul>
