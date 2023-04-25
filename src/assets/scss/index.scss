@@ -1,4 +1,4 @@
-@import './grid';
+@import './base';
 
 // ATOMS
 @import './atoms/logo';
@@ -15,3 +15,7 @@
 
 // ORGANISMS
 @import './organisms/header';
+
+// PAGES
+@import './pages/home';
+@import './pages/about';

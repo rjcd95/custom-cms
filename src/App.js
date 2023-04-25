@@ -5,6 +5,7 @@ import Header from './components/organisms/header';
 import Home from 'components/pages/home';
 import './assets/scss/index.scss';
 import Footer from 'components/atoms/footer';
+import About from 'components/pages/about';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -25,9 +26,10 @@ const App = () => {
       <Router>
         <div>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
           <Footer />
         </div>
       </Router>

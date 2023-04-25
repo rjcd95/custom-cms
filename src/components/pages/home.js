@@ -1,6 +1,6 @@
+import React from 'react';
 import SimpleText from 'components/atoms/simpleText';
 import ThumbnailWithText from 'components/molecules/thumbnailWithText';
-import React from 'react';
 import Hero from '../molecules/hero';
 import initialData from 'assets/data/initialData';
 import Video from 'components/atoms/video';
