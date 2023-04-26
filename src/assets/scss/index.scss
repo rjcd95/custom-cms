@@ -5,6 +5,7 @@
 @import './atoms/menu-link';
 @import './atoms/video';
 @import './atoms/footer';
+@import './atoms/post-card';
 
 // MOLECULES
 @import './molecules/menu';
@@ -12,6 +13,7 @@
 @import './molecules/hero-image';
 @import './molecules/thumbnail-with-text';
 @import './molecules/gallery-images';
+@import './molecules/pagination';
 
 // ORGANISMS
 @import './organisms/header';
