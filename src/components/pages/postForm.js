@@ -2,10 +2,11 @@ import { POSTS_KEY } from 'common/constants';
 import Button from 'components/atoms/button';
 import FormGroup from 'components/molecules/formGroup';
 import React, { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import useLocalStorage from 'services/hooks/useLocalStorage';
 
 const PostForm = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -18,7 +19,7 @@ const PostForm = () => {
     if (postId) {
       urlToRedirect = `/post/${postId}`;
     }
-    window.location.href = urlToRedirect;
+    navigate(urlToRedirect);
   };
 
   const handleSubmit = (e) => {
