@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Personal CMS
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#styled-with">Styled With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-In the project directory, you can run:
+<!-- ABOUT THE PROJECT -->
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is a micro-CMS web app that allows you managing your blog, it was built using React JS and localStorage, providing a seamless and efficient experience for managing your blog. With this micro_CMS you will be able to easily create and edit posts. Also you will see a full list of post, paginate them and read a full post in the post detail page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Built With
 
-### `npm test`
+- [React](https://reactjs.org/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run build`
+<!-- GETTING STARTED -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```sh
+   git clone https://github.com/rjcd95/personal-cms.git
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Open project in Visual Studio Code
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install all dependencies
 
-## Learn More
+   ```sh
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Run the application
+   ```sh
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Code Splitting
+<!-- USAGE EXAMPLES -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+### Micro-CMS Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Home Page
+![Home Page][Home-Page-Screenshot]
 
-### Making a Progressive Web App
+### About Page
+![About Page][About-Page-Screenshot]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Blog Page
+![Blog Page][Blog-Page-Screenshot]
 
-### Advanced Configuration
+### Post Detail Page
+![Post Detail Page][Post-Detail-Page-Screenshot]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Post Edit Page
+![Post Edit Page][Post-Edit-Page-Screenshot]
 
-### Deployment
+### Add New Post Page
+![Add New Post Page][Add-New-Post-Page-Screenshot]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Contact Page
+![Contact Page][Contact-Page-Screenshot]
 
-### `npm run build` fails to minify
+### Contact Page after sent message
+![Contact Page after sent message][Contact-Page-After-Sent-Message]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+- [x] Homepage – A simple home page with a hero-image, video player componet and gallery component
+- [x] About Page - A simple about page with lorem ipsum content
+- [x] Blog Page - List of posts. Include pagination and a dropdown to select the number of posts to show. Also include a button to add a new post at right of the title page.
+- [x] Post Detail Page = A page to show the full content of a selected post. Include a button to go back to the posts page and another one to go to the post edit page.
+- [x] Post Edit page - This is a page with a form that allows you edit the title, content and author of the post. 
+- [x] Contact Page - This is a page with a functional contact form implemented with [Formspree](https://formspree.io/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+René Cortez - [LinkedIn](https://www.linkedin.com/in/cortesdinarte) - [Github](https://github.com/rjcd95) - renejcd95@gmail.com
+
+Project Link: [https://github.com/rjcd95/personal-cms](https://github.com/rjcd95/personal-cms)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[product-screenshot]: https://i.imgur.com/dWBk7Xr.png
+[product-screenshot2]: https://i.imgur.com/OakDGrx.png
+[usage-rating]: https://i.imgur.com/R3QcaUq.png
+[usage-comment]: https://i.imgur.com/8UxgYvq.png
+[usage-movie-admin]: https://i.imgur.com/QymXriE.png
+[usage-rating-admin]: https://i.imgur.com/CAkfXQp.png
+
+[Home-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234663991-4c1bbd10-912f-4f5a-b223-9e78052f41d6.png
+
+[About-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664134-43bcf359-3549-4691-a198-7a92f176cc3d.png
+
+[Blog-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664169-8691de60-d12d-4a55-a705-70245dabac4d.png
+
+[Post-Detail-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664211-a6ba6ebb-da14-4b2d-9dd9-cad5429a7878.png
+
+[Post-Edit-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664247-d8660136-5eb2-4506-bb49-cecc80559f9d.png
+
+[Add-New-Post-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664293-de6612e1-9091-41db-aa3c-1e200fc3080b.png
+
+[Contact-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664334-e64e346c-513c-4ab4-a962-5e22138ea621.png
+
+![Contact-Page-After-Sent-Message](https://user-images.githubusercontent.com/4002315/234664408-07a07e5f-d8a8-4c0d-93b5-15b72d2b0dd7.png)

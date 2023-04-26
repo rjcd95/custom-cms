@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import PostCard from "../atoms/postCard";
 import Pagination from "../molecules/pagination";
 import getExcerpt from "common/getExcerpt";
 import addIcon from 'assets/images/add.svg';
+import useLocalStorage from 'services/hooks/useLocalStorage';
+import { POSTS_KEY } from "common/constants";
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(5);
-
-  useEffect(() => {
-    const localPosts = JSON.parse(localStorage.getItem("posts"));
-    if (localPosts) {
-      setPosts(localPosts);
-    }
-  }, []);
-
+  const [posts] = useLocalStorage(POSTS_KEY);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
@@ -37,7 +31,7 @@ const Blog = () => {
             {currentPosts.map((post, index) => (
                 <PostCard key={index} post={{
                     ...post,
-                    excerpt: getExcerpt(post.body, 75)
+                    excerpt: getExcerpt(post.content, 75)
                 }}/>
             ))}
           </div>

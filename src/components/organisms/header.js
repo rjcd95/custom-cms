@@ -1,6 +1,7 @@
 import Logo from 'components/atoms/logo';
 import Menu from 'components/molecules/menu';
 import Search from 'components/molecules/search';
+import withInitialData from 'services/middleware/withInitialData';
 
 const Header = () => (
   <header className="header">
@@ -10,4 +11,4 @@ const Header = () => (
   </header>
 );
 
-export default Header;
+export default withInitialData(Header);

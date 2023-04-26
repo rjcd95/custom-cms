@@ -1,3 +1,5 @@
+import Button from 'components/atoms/button';
+import FormGroup from 'components/molecules/formGroup';
 import React, { useState } from 'react';
 
 const Contact = () => {
@@ -29,7 +31,7 @@ const Contact = () => {
     };
     return (
         <div className='container'>
-            <div className='contact'>
+            <div className='contact-form'>
                 <h1>Contact Page</h1>
                 {submitted ? (
                     <div>
@@ -44,19 +46,36 @@ const Contact = () => {
                             This is a contact page implemented with formspree :) You can try it and I will receive your message
                         </p>
                         <form onSubmit={handleSubmit}>
-                            <label>
-                                Name*
-                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-                            </label>
-                            <label>
-                                Email*
-                                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                            </label>
-                            <label>
-                                Message*
-                                <textarea value={message} onChange={(e) => setMessage(e.target.value)} required />
-                            </label>
-                            <button type="submit">Send Message</button>
+                            <FormGroup
+                                title='Name'
+                                classes='contact-form__form-group'
+                                type='text'
+                                name='title'
+                                value={name}
+                                onChange={setName}
+                                isRequired={true}
+                            />
+                            <FormGroup
+                                title='Email'
+                                classes='contact-form__form-group'
+                                type='email'
+                                name='email'
+                                value={email}
+                                onChange={setEmail}
+                                isRequired={true}
+                            />
+                            <FormGroup
+                                title='Message'
+                                classes='contact-form__form-group'
+                                type='textarea'
+                                value={message}
+                                name='message'
+                                onChange={setMessage}
+                                isRequired={true}
+                            />
+                            <div className="contact-form__buttons">
+                                <Button classes="submit" type="submit" text='Send Message'></Button>
+                            </div>
                         </form>
                     </div>
                 )}
