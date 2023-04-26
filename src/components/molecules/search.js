@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { SearchLabel, SearchInput, SearchButton, SearchMatches } from '../atoms/search';
+import useLocalStorage from 'services/hooks/useLocalStorage';
+import { POSTS_KEY } from 'common/constants';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [matches, setMatches] = useState([]);
+  const [posts] = useLocalStorage(POSTS_KEY);
 
   const handleSearchChange = (event) => {
     const searchTerm = event.target.value;
-
-    // retrieve posts from local storage
-    const posts = JSON.parse(localStorage.getItem("posts"));
-
     // filter posts by title or body containing the search term
     const inputValue = event.target.value;
     const filteredPosts = posts.filter(

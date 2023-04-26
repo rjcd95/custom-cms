@@ -1,12 +1,17 @@
+import { POSTS_KEY } from 'common/constants';
+import Button from 'components/atoms/button';
+import FormGroup from 'components/molecules/formGroup';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import useLocalStorage from 'services/hooks/useLocalStorage';
 
 const PostForm = () => {
   const { id } = useParams();
   const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+  const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
   const [postId, setPostId] = useState(id);
+  const [posts, setPosts] = useLocalStorage(POSTS_KEY);
 
   const goToPreviousPage = () => {
     let urlToRedirect = '/blog';
@@ -21,14 +26,13 @@ const PostForm = () => {
 
     const post = {
       title,
-      body,
+      content,
       author,
       date: new Date().toISOString(),
     };
 
     if (postId) {
       // Edit an existing post
-      const posts = JSON.parse(localStorage.getItem("posts"));
       const updatedPosts = posts.map((p) => {
         if (p.id === postId) {
           return {
@@ -38,15 +42,14 @@ const PostForm = () => {
         }
         return p;
       });
-      localStorage.setItem("posts", JSON.stringify(updatedPosts));
+      setPosts(updatedPosts);
     } else {
       // Add a new post
-      const posts = JSON.parse(localStorage.getItem("posts")) || [];
       const newPost = {
         ...post,
         id: Date.now(),
       };
-      localStorage.setItem("posts", JSON.stringify([...posts, newPost]));
+      setPosts([...posts, newPost]);
     }
 
     // Redirect back to the previous page
@@ -59,11 +62,10 @@ const PostForm = () => {
 
   const initializeForm = () => {
     if (postId) {
-      const posts = JSON.parse(localStorage.getItem("posts"));
       const post = posts.find((p) => p.id === Number(postId));
       if (post) {
         setTitle(post.title);
-        setBody(post.body);
+        setContent(post.content);
         setAuthor(post.author);
         setPostId(post.id);
       }
@@ -80,44 +82,37 @@ const PostForm = () => {
         <div className="post-form">
             <h1>{postId ? "Edit Post" : "Add Post"}</h1>
             <form onSubmit={handleSubmit}>
-                <div className="post-form__form-group">
-                    <label htmlFor="title">Title:</label>
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="post-form__form-group">
-                    <label htmlFor="body">Body:</label>
-                    <textarea
-                        id="body"
-                        name="body"
-                        value={body}
-                        onChange={(e) => setBody(e.target.value)}
-                        required
-                    ></textarea>
-                </div>
-                <div className="post-form__form-group">
-                    <label htmlFor="author">Author:</label>
-                    <input
-                        type="text"
-                        id="author"
-                        name="author"
-                        value={author}
-                        onChange={(e) => setAuthor(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="post-form__buttons">
-                    <button className="post-form__buttons--cancel" type="button" onClick={handleCancel}>
-                        Cancel
-                    </button>
-                    <button className="post-form__buttons--submit" type="submit">{postId ? "Save" : "Add"}</button>
-                </div>
+              <FormGroup
+                title='Title'
+                classes='post-form__form-group'
+                type='text'
+                name='title'
+                value={title}
+                onChange={setTitle}
+                isRequired={true}
+              />
+              <FormGroup
+                title='Content'
+                classes='post-form__form-group'
+                type='textarea'
+                name='title'
+                value={content}
+                onChange={setContent}
+                isRequired={true}
+              />
+              <FormGroup
+                title='Author'
+                classes='post-form__form-group'
+                type='text'
+                name='author'
+                value={author}
+                onChange={setAuthor}
+                isRequired={true}
+              />
+              <div className="post-form__buttons">
+                  <Button classes="cancel" type="button" text='Cancel' onClick={handleCancel}></Button>
+                  <Button classes="submit" type="submit" text={postId ? "Save" : "Add"}></Button>
+              </div>
             </form>
         </div>
       </div>

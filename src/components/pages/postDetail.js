@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import backIcon from 'assets/images/back.svg';
 import editIcon from 'assets/images/edit.svg';
+import useLocalStorage from 'services/hooks/useLocalStorage';
+import { POSTS_KEY } from 'common/constants';
 
 const PostDetail = () => {
   const { id: postId } = useParams();
   let post;
 
   // Retrieve the post from local storage
-  const posts = JSON.parse(localStorage.getItem("posts"));
+  const [posts] = useLocalStorage(POSTS_KEY);
   if (posts) {
     const currentPost = posts.find(postItem => postItem.id === parseInt(postId));
     if (currentPost) {
@@ -36,7 +38,7 @@ const PostDetail = () => {
             <span className="blog-detail__author">{post.author}</span>
             <span className="blog-detail__date">{new Date(post.date).toLocaleDateString()}</span>
           </div>
-          <div className="blog-detail__content">{post.body}</div>
+          <div className="blog-detail__content">{post.content}</div>
         </div>
       </div>
     </div>
