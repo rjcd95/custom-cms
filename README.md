@@ -148,4 +148,4 @@ Project Link: [https://github.com/rjcd95/personal-cms](https://github.com/rjcd95
 
 [Contact-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664334-e64e346c-513c-4ab4-a962-5e22138ea621.png
 
-![Contact-Page-After-Sent-Message](https://user-images.githubusercontent.com/4002315/234664408-07a07e5f-d8a8-4c0d-93b5-15b72d2b0dd7.png)
+[Contact-Page-After-Sent-Message](https://user-images.githubusercontent.com/4002315/234664408-07a07e5f-d8a8-4c0d-93b5-15b72d2b0dd7.png)
