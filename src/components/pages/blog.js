@@ -24,8 +24,12 @@ const Blog = () => {
           <div className="blog-title">
             <h1>Blog</h1>
             <Link to={`/post/new`}>
-              <img className='blog-title--add-icon' src={addIcon} alt="add" />
+              <div className="tooltip">
+                <img className='blog-title--add-icon' src={addIcon} alt="add" />
+                <span className="tooltiptext">Add New Post</span>
+              </div>
             </Link>
+            
           </div>
           <div className='blog-posts'>
             {currentPosts.map((post, index) => (
