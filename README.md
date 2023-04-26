@@ -111,6 +111,7 @@ This is a micro-CMS web app that allows you managing your blog, it was built usi
 - [x] Post Detail Page = A page to show the full content of a selected post. Include a button to go back to the posts page and another one to go to the post edit page.
 - [x] Post Edit page - This is a page with a form that allows you edit the title, content and author of the post. 
 - [x] Contact Page - This is a page with a functional contact form implemented with [Formspree](https://formspree.io/)
+- [x] Deployed on Netlify
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -120,7 +121,9 @@ This is a micro-CMS web app that allows you managing your blog, it was built usi
 
 René Cortez - [LinkedIn](https://www.linkedin.com/in/cortesdinarte) - [Github](https://github.com/rjcd95) - renejcd95@gmail.com
 
-Project Link: [https://github.com/rjcd95/personal-cms](https://github.com/rjcd95/personal-cms)
+Project Repo Link: [https://github.com/rjcd95/personal-cms](https://github.com/rjcd95/personal-cms)
+
+Project Deployed Link: [Micro-CMS](https://main--resonant-cajeta-e7cd38.netlify.app/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
