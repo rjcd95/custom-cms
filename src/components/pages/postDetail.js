@@ -38,7 +38,7 @@ const PostDetail = () => {
             <span className="blog-detail__author">{post.author}</span>
             <span className="blog-detail__date">{new Date(post.date).toLocaleDateString()}</span>
           </div>
-          <div className="blog-detail__content">{post.body}</div>
+          <div className="blog-detail__content">{post.content}</div>
         </div>
       </div>
     </div>

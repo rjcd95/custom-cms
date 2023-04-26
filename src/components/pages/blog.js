@@ -31,7 +31,7 @@ const Blog = () => {
             {currentPosts.map((post, index) => (
                 <PostCard key={index} post={{
                     ...post,
-                    excerpt: getExcerpt(post.body, 75)
+                    excerpt: getExcerpt(post.content, 75)
                 }}/>
             ))}
           </div>
