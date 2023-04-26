@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import arrowLeft from 'assets/images/arrow-left.svg';
 
-const BlogDetail = () => {
+const PostDetail = () => {
   const { id } = useParams();
   let post;
 
@@ -39,4 +39,4 @@ const BlogDetail = () => {
   );
 }
 
-export default BlogDetail;
+export default PostDetail;
