@@ -52,12 +52,12 @@ const PostDetail = () => {
                 <span className="tooltiptext">Edit Post</span>
               </div>
             </Link>
-            <a href='!#'>
+            <div className='blog-detail__title--delete'>
               <div className="tooltip">
-                <img className='blog-detail__title--delete-icon' src={trashIcon} alt="delete" onClick={handleOnDelete}/>
+                <img className='blog-detail__title--delete--icon' src={trashIcon} alt="delete" onClick={handleOnDelete}/>
                 <span className="tooltiptext">Delete Post</span>
               </div>
-            </a>
+            </div>
           </div>
           <div className="blog-detail__meta">
             <span className="blog-detail__author">{post.author}</span>
