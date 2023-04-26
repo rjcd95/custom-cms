@@ -1,9 +1,9 @@
+import React, { useEffect, useState } from 'react';
+import { FORMSPREE_URL } from 'common/constants';
 import Button from 'components/atoms/button';
 import FormGroup from 'components/molecules/formGroup';
-import React, { useState } from 'react';
 
 const Contact = () => {
-    const formspreeUrl = "https://formspree.io/f/xbjeazwq";
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -12,7 +12,7 @@ const Contact = () => {
     const handleSubmit = async (event) => {
       event.preventDefault();
 
-        const response = await fetch(formspreeUrl, {
+        const response = await fetch(FORMSPREE_URL, {
             method: "POST",
             body: JSON.stringify({
                 name,
@@ -29,6 +29,14 @@ const Contact = () => {
           setSubmitted(true);
         }
     };
+    useEffect(() => {
+        if (!submitted) {
+            setName('');
+            setEmail('');
+            setMessage('');
+        }
+    }, [submitted]);
+
     return (
         <div className='container'>
             <div className='contact-form'>
@@ -37,8 +45,9 @@ const Contact = () => {
                     <div>
                         <h2>Thank you for your message!</h2>
                         <p className='about__text'>
-                            Reload the page if you want to send another message :) 
+                            Do you want to try again? No problem! Click the button below
                         </p>
+                        <Button classes="submit" type="submit" text='Try Again' onClick={() => setSubmitted(false)}></Button>
                     </div>
                 ) : (
                     <div>
