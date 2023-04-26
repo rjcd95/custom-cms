@@ -40,13 +40,24 @@ const PostDetail = () => {
         <div className="blog-detail">
           <div className="blog-detail__title">
             <Link to="/blog">
-              <img className='blog-detail__title--back-icon' src={backIcon} alt="back" />
+              <div className="tooltip">
+                <img className='blog-detail__title--back-icon' src={backIcon} alt="back" />
+                <span className="tooltiptext">Back To Blog</span>
+              </div>
             </Link>
             <h1 className="blog-detail__title">{post.title}</h1>
             <Link to={`/post/${postId}/edit`}>
-              <img className='blog-detail__title--edit-icon' src={editIcon} alt="edit" />
+              <div className="tooltip">
+                <img className='blog-detail__title--edit-icon' src={editIcon} alt="edit" />
+                <span className="tooltiptext">Edit Post</span>
+              </div>
             </Link>
-            <img className='blog-detail__title--delete-icon' src={trashIcon} alt="delete" onClick={handleOnDelete}/>
+            <a href='!#'>
+              <div className="tooltip">
+                <img className='blog-detail__title--delete-icon' src={trashIcon} alt="delete" onClick={handleOnDelete}/>
+                <span className="tooltiptext">Delete Post</span>
+              </div>
+            </a>
           </div>
           <div className="blog-detail__meta">
             <span className="blog-detail__author">{post.author}</span>
