@@ -1,3 +1,4 @@
+import Button from 'components/atoms/button';
 import React, { useState } from 'react';
 
 const Contact = () => {
@@ -57,7 +58,7 @@ const Contact = () => {
                                 <textarea id="body" name="body" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
                             </div>
                             <div className="contact-form__buttons">
-                                <button className="contact-form__buttons--submit" type="submit">Send Message</button>
+                                <Button classes="submit" type="submit" text='Send Message'></Button>
                             </div>
                         </form>
                     </div>

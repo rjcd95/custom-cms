@@ -1,5 +1,8 @@
+import { POSTS_KEY } from 'common/constants';
+import Button from 'components/atoms/button';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import useLocalStorage from 'services/hooks/useLocalStorage';
 
 const PostForm = () => {
   const { id } = useParams();
@@ -7,6 +10,7 @@ const PostForm = () => {
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
   const [postId, setPostId] = useState(id);
+  const [posts, setPosts] = useLocalStorage(POSTS_KEY);
 
   const goToPreviousPage = () => {
     let urlToRedirect = '/blog';
@@ -28,7 +32,6 @@ const PostForm = () => {
 
     if (postId) {
       // Edit an existing post
-      const posts = JSON.parse(localStorage.getItem("posts"));
       const updatedPosts = posts.map((p) => {
         if (p.id === postId) {
           return {
@@ -38,15 +41,14 @@ const PostForm = () => {
         }
         return p;
       });
-      localStorage.setItem("posts", JSON.stringify(updatedPosts));
+      setPosts(updatedPosts);
     } else {
       // Add a new post
-      const posts = JSON.parse(localStorage.getItem("posts")) || [];
       const newPost = {
         ...post,
         id: Date.now(),
       };
-      localStorage.setItem("posts", JSON.stringify([...posts, newPost]));
+      setPosts([...posts, newPost]);
     }
 
     // Redirect back to the previous page
@@ -59,7 +61,6 @@ const PostForm = () => {
 
   const initializeForm = () => {
     if (postId) {
-      const posts = JSON.parse(localStorage.getItem("posts"));
       const post = posts.find((p) => p.id === Number(postId));
       if (post) {
         setTitle(post.title);
@@ -113,10 +114,8 @@ const PostForm = () => {
                     />
                 </div>
                 <div className="post-form__buttons">
-                    <button className="post-form__buttons--cancel" type="button" onClick={handleCancel}>
-                        Cancel
-                    </button>
-                    <button className="post-form__buttons--submit" type="submit">{postId ? "Save" : "Add"}</button>
+                    <Button classes="cancel" type="button" text='Cancel' onClick={handleCancel}></Button>
+                    <Button classes="submit" type="submit" text={postId ? "Save" : "Add"}></Button>
                 </div>
             </form>
         </div>
