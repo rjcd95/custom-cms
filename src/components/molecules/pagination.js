@@ -17,6 +17,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, setPostsPerPage }) => 
   
   const handleSelectChange = (event) => {
     const newPostsPerPage = parseInt(event.target.value);
+    setCurrentPage(1);
     setPostsPerPage(newPostsPerPage);
     paginate(1);
   };
