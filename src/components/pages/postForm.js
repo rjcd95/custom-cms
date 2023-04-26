@@ -2,11 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const PostForm = () => {
-    const { id } = useParams();
-    const [title, setTitle] = useState("");
-    const [body, setBody] = useState("");
-    const [author, setAuthor] = useState("");
-    const [postId, setPostId] = useState(id);
+  const { id } = useParams();
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [author, setAuthor] = useState("");
+  const [postId, setPostId] = useState(id);
+
+  const goToPreviousPage = () => {
+    let urlToRedirect = '/blog';
+    if (postId) {
+      urlToRedirect = `/post/${postId}`;
+    }
+    window.location.href = urlToRedirect;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,12 +49,12 @@ const PostForm = () => {
       localStorage.setItem("posts", JSON.stringify([...posts, newPost]));
     }
 
-    // Redirect back to the blog page
-    window.location.href = `/post/${postId}`;
+    // Redirect back to the previous page
+    goToPreviousPage();
   };
-  
+
   const handleCancel = () => {
-    window.location.href = `/post/${postId}`;
+    goToPreviousPage();
   };
 
   const initializeForm = () => {
