@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import arrowLeft from 'assets/images/arrow-left.svg';
+import backIcon from 'assets/images/back.svg';
+import editIcon from 'assets/images/edit.svg';
 
-const BlogDetail = () => {
-  const { id } = useParams();
+const PostDetail = () => {
+  const { id: postId } = useParams();
   let post;
 
   // Retrieve the post from local storage
   const posts = JSON.parse(localStorage.getItem("posts"));
   if (posts) {
-    const currentPost = posts.find(postItem => postItem.id === parseInt(id));
+    const currentPost = posts.find(postItem => postItem.id === parseInt(postId));
     if (currentPost) {
       post = currentPost;
     }
@@ -24,9 +25,12 @@ const BlogDetail = () => {
         <div className="blog-detail">
           <div className="blog-detail__title">
             <Link to="/blog">
-              <img src={arrowLeft} alt="back" />
+              <img className='blog-detail__title--back-icon' src={backIcon} alt="back" />
             </Link>
             <h1 className="blog-detail__title">{post.title}</h1>
+            <Link to={`/post/${postId}/edit`}>
+              <img className='blog-detail__title--edit-icon' src={editIcon} alt="edit" />
+            </Link>
           </div>
           <div className="blog-detail__meta">
             <span className="blog-detail__author">{post.author}</span>
@@ -39,4 +43,4 @@ const BlogDetail = () => {
   );
 }
 
-export default BlogDetail;
+export default PostDetail;
