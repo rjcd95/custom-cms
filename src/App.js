@@ -1,25 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import getInitialData from "./common/getInitialData";
 import Header from './components/organisms/header';
-import initialData from "./assets/data/initialData";
+import Home from 'components/pages/home';
+import Footer from 'components/atoms/footer';
+import About from 'components/pages/about';
+import Contact from 'components/pages/contact';
+import Blog from 'components/pages/blog';
+import BlogDetail from 'components/pages/blogDetail';
 import './assets/scss/index.scss';
 
 const App = () => {
-  const [posts, setPosts] = useState([]);
+  const initialData = getInitialData();
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("posts"));
 
     if (!data) {
       localStorage.setItem("posts", JSON.stringify(initialData));
-      setPosts(initialData);
-    } else {
-      setPosts(data);
     }
-  }, []);
+  }, [initialData]);
 
   return (
     <div className="App">
-      <Header />
+      <Router>
+        <div>
+          <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/post/:id" element={<BlogDetail />} />
+            </Routes>
+          <Footer />
+        </div>
+      </Router>
     </div>
   );
 };
