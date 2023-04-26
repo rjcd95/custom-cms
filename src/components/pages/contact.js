@@ -29,7 +29,7 @@ const Contact = () => {
     };
     return (
         <div className='container'>
-            <div className='contact'>
+            <div className='contact-form'>
                 <h1>Contact Page</h1>
                 {submitted ? (
                     <div>
@@ -44,19 +44,21 @@ const Contact = () => {
                             This is a contact page implemented with formspree :) You can try it and I will receive your message
                         </p>
                         <form onSubmit={handleSubmit}>
-                            <label>
-                                Name*
-                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-                            </label>
-                            <label>
-                                Email*
-                                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                            </label>
-                            <label>
-                                Message*
-                                <textarea value={message} onChange={(e) => setMessage(e.target.value)} required />
-                            </label>
-                            <button type="submit">Send Message</button>
+                            <div className="post-form__form-group">
+                                <label htmlFor="title">Name:</label>
+                                <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
+                            </div>
+                            <div className="post-form__form-group">
+                                <label htmlFor="title">Email:</label>
+                                <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                            </div>
+                            <div className="post-form__form-group">
+                                <label htmlFor="message">Message:</label>
+                                <textarea id="body" name="body" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
+                            </div>
+                            <div className="contact-form__buttons">
+                                <button className="contact-form__buttons--submit" type="submit">Send Message</button>
+                            </div>
                         </form>
                     </div>
                 )}
