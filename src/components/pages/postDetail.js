@@ -29,7 +29,7 @@ const PostDetail = () => {
             </Link>
             <h1 className="blog-detail__title">{post.title}</h1>
             <Link to={`/post/${postId}/edit`}>
-              <img className='blog-detail__title--edit-icon' src={editIcon} alt="back" />
+              <img className='blog-detail__title--edit-icon' src={editIcon} alt="edit" />
             </Link>
           </div>
           <div className="blog-detail__meta">
