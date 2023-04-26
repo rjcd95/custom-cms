@@ -10,6 +10,17 @@
             padding: 0.5rem;
             padding-top: 2rem;
         }
+        &--delete {
+            padding: 0.5rem;
+            padding-top: 2rem;
+            cursor: pointer;
+            &--icon {
+                width: 24px;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
         &--back-icon {
             width: 20px;
             &:hover {
@@ -17,12 +28,6 @@
             }
         }
         &--edit-icon {
-            width: 20px;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-        &--delete-icon {
             width: 20px;
             &:hover {
                 text-decoration: underline;
