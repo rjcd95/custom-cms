@@ -1,7 +1,9 @@
-import getExcerpt from "common/getExcerpt";
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import PostCard from "../atoms/postCard";
 import Pagination from "../molecules/pagination";
+import getExcerpt from "common/getExcerpt";
+import addIcon from 'assets/images/add.svg';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -24,8 +26,13 @@ const Blog = () => {
   return (
     <div>
       <div className='container'>
-        <h1>Blog</h1>
         <div className='blog'>
+          <div className="blog-title">
+            <h1>Blog</h1>
+            <Link to={`/post/new`}>
+              <img className='blog-title--add-icon' src={addIcon} alt="add" />
+            </Link>
+          </div>
           <div className='blog-posts'>
             {currentPosts.map((post, index) => (
                 <PostCard key={index} post={{
