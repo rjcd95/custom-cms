@@ -1,7 +1,7 @@
 import { POSTS_KEY } from 'common/constants';
 import Button from 'components/atoms/button';
 import FormGroup from 'components/molecules/formGroup';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import useLocalStorage from 'services/hooks/useLocalStorage';
 
@@ -60,7 +60,7 @@ const PostForm = () => {
     goToPreviousPage();
   };
 
-  const initializeForm = () => {
+  const initializeForm = useCallback(() => {
     if (postId) {
       const post = posts.find((p) => p.id === Number(postId));
       if (post) {
@@ -70,11 +70,11 @@ const PostForm = () => {
         setPostId(post.id);
       }
     }
-  };
+  }, [postId, posts]);
 
   useEffect(() => {
     initializeForm();
-  }, []);
+  }, [initializeForm]);
   
   return (
     <div>
