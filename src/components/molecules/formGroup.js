@@ -6,8 +6,9 @@ import TextArea from 'components/atoms/textarea.js';
 
 const FormGroup = ({ title, classes, type, name, value, onChange, isRequired = false }) => {
     const handleOnChange = onChange ? onChange : () => {};
+    const customClasses = `form-group ${classes ? classes : ''}}`
     return (
-        <div className={classes}>
+        <div className={customClasses}>
             <Label
                 htmlFor={name}
                 title={`${title} ${isRequired ? '*' : ''}`}

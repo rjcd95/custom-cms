@@ -1,0 +1,18 @@
+.form-group {
+    margin-bottom: 20px;
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input, textarea {
+        width: 98%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+    }
+    textarea {
+        height: 200px;
+    }
+}
