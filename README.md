@@ -143,7 +143,7 @@ Project Deployed Link: [Micro-CMS](https://main--resonant-cajeta-e7cd38.netlify.
 
 [Blog-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664169-8691de60-d12d-4a55-a705-70245dabac4d.png
 
-[Post-Detail-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664211-a6ba6ebb-da14-4b2d-9dd9-cad5429a7878.png
+[Post-Detail-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234713785-0e9bf53f-e5c8-4c4b-9fab-adefa3d0479b.png
 
 [Post-Edit-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664247-d8660136-5eb2-4506-bb49-cecc80559f9d.png
 
@@ -151,4 +151,5 @@ Project Deployed Link: [Micro-CMS](https://main--resonant-cajeta-e7cd38.netlify.
 
 [Contact-Page-Screenshot]: https://user-images.githubusercontent.com/4002315/234664334-e64e346c-513c-4ab4-a962-5e22138ea621.png
 
-[Contact-Page-After-Sent-Message]: https://user-images.githubusercontent.com/4002315/234664408-07a07e5f-d8a8-4c0d-93b5-15b72d2b0dd7.png
+[Contact-Page-After-Sent-Message]: https://user-images.githubusercontent.com/4002315/234713948-5f1e5a6e-2082-4c7c-a60c-f5f071f102d3.png
+
