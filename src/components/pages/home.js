@@ -2,12 +2,13 @@ import React from 'react';
 import SimpleText from 'components/atoms/simpleText';
 import ThumbnailWithText from 'components/molecules/thumbnailWithText';
 import Hero from '../molecules/hero';
-import initialData from 'assets/data/initialData';
+import getInitialData from 'common/getInitialData';
 import Video from 'components/atoms/video';
 import GalleryImages from 'components/molecules/galleryImages';
 import images from 'assets/data/images';
 
 const Home = () => {
+    const initialData = getInitialData();
     const getRandomImages = numberOfImages => {
         const randomIndexes = [];
         
