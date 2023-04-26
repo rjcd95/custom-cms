@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/organisms/header';
 import Home from 'components/pages/home';
 import Footer from 'components/atoms/footer';
@@ -13,7 +13,7 @@ import PostForm from 'components/pages/postForm';
 const App = () => {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <div>
           <Header />
             <Routes>
@@ -27,7 +27,7 @@ const App = () => {
             </Routes>
           <Footer />
         </div>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 };
