@@ -42,11 +42,11 @@ const PostForm = () => {
     }
 
     // Redirect back to the blog page
-    window.location.href = "/blog";
+    window.location.href = `/post/${postId}`;
   };
   
   const handleCancel = () => {
-    window.location.href = "/blog";
+    window.location.href = `/post/${postId}`;
   };
 
   const initializeForm = () => {
