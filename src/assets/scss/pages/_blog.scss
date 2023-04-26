@@ -1,30 +1,60 @@
-.blog {
-    &__text {
-        font-size: 1.5rem;
-        font-weight: 300;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
-        text-align: justify;
-    }
-
-    .post {
-        display: flex;
-        flex-direction: column;
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+  
+    &__post-card {
         background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
         padding: 20px;
-    }
-      
-    .post__title {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-      
-    .post__body {
-        font-size: 16px;
-        margin-bottom: 10px;
+        &__content {
+            &--title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin: 0;
+                margin-bottom: 10px;
+                a {
+                    color: #333;
+                    text-decoration: none;
+                }
+            }
+            &--excerpt {
+                font-size: 0.9rem;
+                margin: 0;
+                margin-bottom: 10px;
+                line-height: 1.5;
+                max-height: 75px;
+                overflow: hidden;
+            }
+        }
+        &__meta {
+            font-size: 0.8rem;
+            color: #666;
+            &--author {
+                float: left;
+            }
+            &--date {
+                float: right;
+            }
+        }
+        &__read-more {
+            margin-top: 3em;
+            text-align: right;
+            a {
+                display: inline-block;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+                font-size: 14px;
+                &:hover {
+                    background-color: #555;
+                }
+            }
+        }
     }
 }
